@@ -28,3 +28,6 @@ bin/
 ### Mac OS ###
 .DS_Store
 /.idea/
+/src/SPRZ.EN.xml
+/src/SPRZ.KZ.xml
+/src/SPRZ.RU.xml
