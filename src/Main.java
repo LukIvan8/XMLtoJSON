@@ -1,10 +1,12 @@
 import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Map;
 
 public class Main {
@@ -45,10 +47,10 @@ public class Main {
             if (!keys.contains(key)) {
                 keys.add(key);
                 JsonObject record = new JsonObject();
-                record.addProperty("code", key);
-                record.addProperty("rus", ru_records.get(key));
-                record.addProperty("kaz", makeKazGreat(key));
-                record.addProperty("eng", en_records.get(key));
+                adder("code", key, record);
+                adder("rus", ru_records.get(key), record);
+                adder("kaz", makeKazGreat(key), record);
+                adder("eng", en_records.get(key), record);
                 recordArray.add(record);
             }
         }
@@ -82,6 +84,11 @@ public class Main {
         }
         return new String(char_record);
 
+    }
+    public static void adder(String property, String value, JsonObject record){
+        if (value!=null){
+            record.addProperty(property, value);
+        }
     }
 }
 

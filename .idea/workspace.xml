@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1eefb113-a0fa-4e25-b57b-b07f64838a34" name="Changes" comment="Вывел добавление в отдельный метод">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/google_code_gson.xml" afterDir="false" />
+    <list default="true" id="1eefb113-a0fa-4e25-b57b-b07f64838a34" name="Changes" comment="Изменил библиотеку из-за чего восстановился порядок">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/json.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JSONbuilder.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JSONbuilder.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JSONparser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JSONparser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Results/gr_.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/Results/gr_.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Results/in_.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/Results/in_.json" afterDir="false" />
@@ -60,7 +60,7 @@
     "project.structure.proportion": "0.15332031",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "File.Encoding"
+    "settings.editor.selected.configurable": "io.unthrottled.amii.config.ui.PluginSettingsUI"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -158,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657512942659</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Изменил библиотеку из-за чего восстановился порядок">
+      <created>1657513725743</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1657513725743</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,7 +186,8 @@
     <MESSAGE value="initial commit" />
     <MESSAGE value="added xmls" />
     <MESSAGE value="Вывел добавление в отдельный метод" />
-    <option name="LAST_COMMIT_MESSAGE" value="Вывел добавление в отдельный метод" />
+    <MESSAGE value="Изменил библиотеку из-за чего восстановился порядок" />
+    <option name="LAST_COMMIT_MESSAGE" value="Изменил библиотеку из-за чего восстановился порядок" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

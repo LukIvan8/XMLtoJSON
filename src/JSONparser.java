@@ -1,15 +1,14 @@
-import org.json.JSONArray;
-import org.json.JSONObject;
+import com.google.gson.*;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 public class JSONparser {
     public static HashMap<String, String> collectRecords(String file, String object) throws IOException {
-        HashMap<String, String> records = new HashMap<>();
+        LinkedHashMap<String, String> records = new LinkedHashMap<>();
         FileReader fileReader = new FileReader("src\\"+file);
         StringBuilder jsonString = new StringBuilder();
         String line;
@@ -20,18 +19,19 @@ public class JSONparser {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        JSONObject json = new JSONObject(jsonString.toString());
-        JSONArray record = json.getJSONObject("spr").getJSONObject(object).getJSONArray("record");
+        JsonObject json = new Gson().fromJson(jsonString.toString(), JsonObject.class);
+        JsonArray record = json.getAsJsonObject("spr").getAsJsonObject(object).getAsJsonArray("record");
 
-        for(int i=0;i<record.length(); i++) {
+        for (JsonElement element : record){
             String code;
+            JsonObject el = element.getAsJsonObject();
             try {
-                Integer temp = record.getJSONObject(i).getInt("code");
-                code = temp.toString();
-            } catch (org.json.JSONException e){
-                code = record.getJSONObject(i).getString("code");
+                Long temp = el.get("code").getAsLong();
+                code = Long.toString(temp);
+            } catch (Exception e){
+                code = el.get("code").getAsString();
             }
-            String name = record.getJSONObject(i).getString("name");
+            String name = el.get("name").getAsString();
             records.put(code, name);
         }
         return records;
