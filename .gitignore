@@ -31,3 +31,5 @@ bin/
 /src/SPRZ.EN.xml
 /src/SPRZ.KZ.xml
 /src/SPRZ.RU.xml
+/JSONbuilder.iml
+/XMLtoJSON.iml

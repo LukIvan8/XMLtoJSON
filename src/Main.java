@@ -1,18 +1,16 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
+import com.google.gson.JsonIOException;
 import com.google.gson.JsonObject;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 
 public class Main {
-    public static HashMap<String, String> ru_records;
-    public static HashMap<String, String> kz_records;
-    public static HashMap<String, String> en_records;
+    public static LinkedHashMap<String, String> ru_records;
+    public static LinkedHashMap<String, String> kz_records;
+    public static LinkedHashMap<String, String> en_records;
 
     public static void main(String[] args) throws IOException {
         ConvertXML.convertXMLtoJSON("SPRZ.EN.xml");
@@ -30,9 +28,10 @@ public class Main {
     public static void makeJSON(String object) {
         JsonArray recordArray = new JsonArray();
         HashSet<String> keys = new HashSet<>();
-        CheckRecords(recordArray, keys, ru_records);
         CheckRecords(recordArray, keys, kz_records);
         CheckRecords(recordArray, keys, en_records);
+        CheckRecords(recordArray, keys, ru_records);
+        recordArray = sorter(recordArray);
         try (FileWriter file = new FileWriter("src\\Results\\" + object + ".json")) {
             file.write(recordArray.toString());
             file.flush();
@@ -42,7 +41,7 @@ public class Main {
         }
     }
 
-    private static void CheckRecords(JsonArray recordArray, HashSet<String> keys, HashMap<String, String> kz_records) {
+    private static void CheckRecords(JsonArray recordArray, HashSet<String> keys, LinkedHashMap<String, String> kz_records) {
         for (String key : kz_records.keySet()) {
             if (!keys.contains(key)) {
                 keys.add(key);
@@ -89,6 +88,41 @@ public class Main {
         if (value!=null){
             record.addProperty(property, value);
         }
+    }
+    public static JsonArray sorter(JsonArray array){
+        JsonArray sortedArray = new JsonArray();
+        List list =new ArrayList<>();
+        for(int i=0;i<array.size();i++){
+            list.add(array.get(i));
+        }
+        Collections.sort(list, new Comparator() {
+            private static final String KEY_NAME = "code";
+            @Override
+            public int compare(Object o1, Object o2) {
+                JsonObject obj1 = (JsonObject) o1;
+                JsonObject obj2 = (JsonObject) o2;
+                String str1;
+                String str2;
+                str1 = obj1.get(KEY_NAME).getAsString();
+                str2 = obj2.get(KEY_NAME).getAsString();
+                Long code1;
+                Long code2;
+                try {
+                    code1 = Long.parseLong(str1);
+                    code2 = Long.parseLong(str2);
+                } catch (NumberFormatException e) {
+                    return -1;
+                }
+
+
+                return code1.compareTo(code2);
+            }
+        });
+        for(int i=0; i<array.size(); i++){
+
+            sortedArray.add((JsonElement) list.get(i));
+        }
+        return sortedArray;
     }
 }
 

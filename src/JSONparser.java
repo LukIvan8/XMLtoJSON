@@ -1,13 +1,15 @@
-import com.google.gson.*;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 
 public class JSONparser {
-    public static HashMap<String, String> collectRecords(String file, String object) throws IOException {
+    public static LinkedHashMap<String, String> collectRecords(String file, String object) throws IOException {
         LinkedHashMap<String, String> records = new LinkedHashMap<>();
         FileReader fileReader = new FileReader("src\\"+file);
         StringBuilder jsonString = new StringBuilder();
