@@ -33,3 +33,6 @@ bin/
 /src/SPRZ.RU.xml
 /JSONbuilder.iml
 /XMLtoJSON.iml
+/target/
+/src/test/
+/src/main/resources/

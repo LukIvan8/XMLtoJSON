@@ -32,7 +32,7 @@ public class Main {
         CheckRecords(recordArray, keys, en_records);
         CheckRecords(recordArray, keys, ru_records);
         recordArray = sorter(recordArray);
-        try (FileWriter file = new FileWriter("src\\Results\\" + object + ".json")) {
+        try (FileWriter file = new FileWriter("src\\main\\java\\Results\\" + object + ".json")) {
             file.write(recordArray.toString());
             file.flush();
 
