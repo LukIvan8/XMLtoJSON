@@ -1,11 +1,10 @@
-import org.json.JSONArray;
-import org.json.JSONObject;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class Main {
@@ -27,7 +26,7 @@ public class Main {
     }
 
     public static void makeJSON(String object) {
-        JSONArray recordArray = new JSONArray();
+        JsonArray recordArray = new JsonArray();
         HashSet<String> keys = new HashSet<>();
         CheckRecords(recordArray, keys, ru_records);
         CheckRecords(recordArray, keys, kz_records);
@@ -41,21 +40,21 @@ public class Main {
         }
     }
 
-    private static void CheckRecords(JSONArray recordArray, HashSet<String> keys, HashMap<String, String> kz_records) {
+    private static void CheckRecords(JsonArray recordArray, HashSet<String> keys, HashMap<String, String> kz_records) {
         for (String key : kz_records.keySet()) {
             if (!keys.contains(key)) {
                 keys.add(key);
-                JSONObject record = new JSONObject();
-                record.put("code", key);
-                record.put("rus", ru_records.get(key));
-                record.put("kaz", makeKazGreat(key));
-                record.put("eng", en_records.get(key));
-                recordArray.put(record);
+                JsonObject record = new JsonObject();
+                record.addProperty("code", key);
+                record.addProperty("rus", ru_records.get(key));
+                record.addProperty("kaz", makeKazGreat(key));
+                record.addProperty("eng", en_records.get(key));
+                recordArray.add(record);
             }
         }
     }
 
-    public static String makeKazGreat(String key){
+    public static String makeKazGreat(String key) {
         String record_kaz = kz_records.get(key);
         Map<Character, Character> map = new HashMap<>();
         map.put('є', 'қ');
@@ -72,11 +71,11 @@ public class Main {
         map.put('і', 'і');
         map.put('­', 'Ғ');
         System.out.println(record_kaz);
-        if (record_kaz == null){
+        if (record_kaz == null) {
             return null;
         }
         char[] char_record = record_kaz.toCharArray();
-        for (int i=0; i< record_kaz.length() ; ++i){
+        for (int i = 0; i < record_kaz.length(); ++i) {
             if (map.containsKey(char_record[i])) {
                 char_record[i] = map.get(char_record[i]);
             }

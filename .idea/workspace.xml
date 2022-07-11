@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1eefb113-a0fa-4e25-b57b-b07f64838a34" name="Changes" comment="">
+    <list default="true" id="1eefb113-a0fa-4e25-b57b-b07f64838a34" name="Changes" comment="Вывел добавление в отдельный метод">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/google_code_gson.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JSONbuilder.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JSONbuilder.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Results/gr_.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/Results/gr_.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Results/in_.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/Results/in_.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Results/ir_.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/Results/ir_.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Results/is_.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/Results/is_.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Results/kr_.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/Results/kr_.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Results/kv_.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/Results/kv_.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Results/mp_.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/Results/mp_.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Results/or_.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/Results/or_.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Results/rd_.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/Results/rd_.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Results/va_.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/Results/va_.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657306846509</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Вывел добавление в отдельный метод">
+      <created>1657512942659</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1657512942659</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,7 +178,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <MESSAGE value="added xmls" />
-    <option name="LAST_COMMIT_MESSAGE" value="added xmls" />
+    <MESSAGE value="Вывел добавление в отдельный метод" />
+    <option name="LAST_COMMIT_MESSAGE" value="Вывел добавление в отдельный метод" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
